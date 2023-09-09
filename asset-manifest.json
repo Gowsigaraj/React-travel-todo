@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-travel-todo/static/css/main.0133d4f3.css",
+    "main.js": "/react-travel-todo/static/js/main.b0a33e17.js",
+    "static/js/787.6437efaa.chunk.js": "/react-travel-todo/static/js/787.6437efaa.chunk.js",
+    "index.html": "/react-travel-todo/index.html",
+    "main.0133d4f3.css.map": "/react-travel-todo/static/css/main.0133d4f3.css.map",
+    "main.b0a33e17.js.map": "/react-travel-todo/static/js/main.b0a33e17.js.map",
+    "787.6437efaa.chunk.js.map": "/react-travel-todo/static/js/787.6437efaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0133d4f3.css",
+    "static/js/main.b0a33e17.js"
+  ]
+}
