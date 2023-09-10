@@ -23,13 +23,14 @@ const App = () => {
     }))
   }
 
-  const packedItem = (id, packed) => {
-    console.log(packed);
+  const packedItem = (id, checked) => {
+    console.log(checked);
 
     setProduct((products) => products.map((item) => {
       if (item.id === id)
-        return { ...item, packed };
-      return item;
+        return { ...item, checked };
+      return item
+
 
 
     })
@@ -37,20 +38,21 @@ const App = () => {
   };
 
 
-  const sort = (value) => {
+  const sortItems = (value) => {
     setProduct(products);
     console.log(value, products);
-    if (value === "input")
+
+    if (value === "order")
       return setProduct((products) =>
-        products.sort((a, b) => a.id - b.id).map((products) => products)
+        products.sort((a, b) => b.id - a.id).map((products) => products)
       );
 
-    if (value === "description")
+    if (value === "descripition")
       return setProduct((products) =>
         products
           .sort((a, b) => {
-            if (a.product < b.product) return -1;
-            if (a.product > b.product) return 1;
+            if (a.descripition < b.descripition) return -1;
+            if (a.descripition > b.descripition) return 1;
             return 0;
           })
           .map((products) => products)
@@ -58,7 +60,7 @@ const App = () => {
 
     if (value === "pack")
       return setProduct((products) =>
-        products.sort((a, b) => a.packed - b.packed).map((products) => products)
+        products.sort((a, b) => a.checked - b.checked).map((products) => products)
       );
 
     console.log(value, products);
@@ -72,7 +74,7 @@ const App = () => {
     <div className='App'>
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <Item product={products} clearItems={clearItems} deleteItems={deleteItems} packedItem={packedItem} sortItems={sort} />
+      <Item product={products} clearItems={clearItems} deleteItems={deleteItems} packedItem={packedItem} sortItems={sortItems} />
 
 
       <Footer props={products} />

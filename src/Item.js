@@ -14,8 +14,9 @@ const Item = ({ product, clearItems, deleteItems, packedItem, sortItems }) => {
             <div className='clear'>
                 <button className="clear_all">
                     <select className='sort' onChange={(e) => sortItems(e.target.value)}>
-                        <option value>Sort By Descripition </option>
-                        <option value>Sort By Packed status</option>
+                        <option value="order">Sort By Order </option>
+                        <option value="descripition">Sort By Descripition </option>
+                        <option value="pack">Sort By Packed status</option>
                     </select>
                 </button>
                 <button onClick={clearItems} >ClearAll</button>
@@ -30,9 +31,9 @@ const List = ({ props, deleteItems, packedItem }) => {
     // console.log(dd);
     return (
         <div className='list'>
-            <input type="checkbox" onChange={(e) => packedItem(props.id, e.target.checked)} checked={props.packed}></input>
+            <input type="checkbox" onChange={(e) => packedItem(props.id, e.target.checked)} checked={props.checked}></input>
 
-            {<span className={props.packed ? "line" : ""}>
+            {<span className={props.checked ? "line" : ""}>
                 {props.descripition}
                 {props.quantity}
             </span>}

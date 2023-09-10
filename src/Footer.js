@@ -7,7 +7,7 @@ import "./Footer.css";
 
 const Footer = ({ props }) => {
     const numItems = props.length;
-    const numPacked = props.filter((items) => items.packed).length;
+    const numPacked = props.filter((items) => items.checked).length;
     const percent = Math.round((numPacked / numItems) * 100);
     return (
         <div className="foot-con">
